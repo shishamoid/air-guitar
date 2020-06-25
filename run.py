@@ -1,10 +1,13 @@
 import cv2
 from src.hand_tracker import HandTracker
 
+
 WINDOW = "Hand Tracking"
 PALM_MODEL_PATH = "models/palm_detection_without_custom_op.tflite"
 LANDMARK_MODEL_PATH = "models/hand_landmark.tflite"
 ANCHORS_PATH = "models/anchors.csv"
+
+print("loaded modules!!")
 
 POINT_COLOR = (0, 255, 0)
 CONNECTION_COLOR = (255, 0, 0)
