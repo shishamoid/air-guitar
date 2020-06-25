@@ -1,7 +1,7 @@
 import csv
 import cv2
 import numpy as np
-import tensorflow as tf
+#import tensorflow as tf
 import tflite_runtime.interpreter as tflite
 
 from src.non_maximum_suppression import non_max_suppression_fast
@@ -30,9 +30,9 @@ class HandTracker():
         self.box_shift = box_shift
         self.box_enlarge = box_enlarge
 
-        self.interp_palm = tf.lite.Interpreter(palm_model)
+        self.interp_palm = tflite.Interpreter(palm_model)
         self.interp_palm.allocate_tensors()
-        self.interp_joint = tf.lite.Interpreter(joint_model)
+        self.interp_joint = tflite.Interpreter(joint_model)
         self.interp_joint.allocate_tensors()
 
         # reading the SSD anchors
