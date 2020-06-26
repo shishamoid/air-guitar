@@ -53,6 +53,8 @@ detector = HandTracker(
 while hasFrame:
     image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     points, _ = detector(image)
+
+    print("ringo")
     if points is not None:
         for point in points:
             x, y = point
