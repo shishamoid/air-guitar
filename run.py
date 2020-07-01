@@ -64,6 +64,7 @@ while hasFrame:
             x1, y1 = points[connection[1]]
             cv2.line(frame, (int(x0), int(y0)), (int(x1), int(y1)), CONNECTION_COLOR, THICKNESS)
     cv2.imshow(WINDOW, frame)
+    print(capture.get(cv2.CAP_PROP_FPS))
     hasFrame, frame = capture.read()
     key = cv2.waitKey(1)
     if key == 27:
