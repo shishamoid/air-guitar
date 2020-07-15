@@ -15,6 +15,10 @@ THICKNESS = 2
 
 cv2.namedWindow(WINDOW)
 capture = cv2.VideoCapture(0)
+capture.set(cv2.CAP_PROP_FRAME_WIDTH, 720)
+capture.set(cv2.CAP_PROP_FRAME_HEIGHT, 480000)
+capture.set(cv2.CAP_PROP_FPS, 30)
+capture.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc('H', '2', '6', '4'));
 
 if capture.isOpened():
     hasFrame, frame = capture.read()
